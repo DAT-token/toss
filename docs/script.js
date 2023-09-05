@@ -296,11 +296,14 @@ async function getDATTransaction () {
   await provider.send('eth_requestAccounts', [])
   provider.pollingInterval = 500
   const signer = provider.getSigner()
+  const address = await signer.getAddress();
   const contract = new ethers.Contract(contractAddress, abi, signer)
-  contract.on('TokenTransferred', (token, sender, amount) => {
-	  document.getElementById('event').classList = 'alert alert-info alert-dismissible fade show'
-	  document.getElementById('event').replaceChildren("DAT token transferred !")
-	  this.getDATBalance();
+  contract.on('TokenTransferred', (token, to, amount) => {
+	  if (to == address) {
+	    document.getElementById('event').classList = 'alert alert-info alert-dismissible fade show'
+	    document.getElementById('event').replaceChildren("DAT token transferred !")
+	    this.getDATBalance();
+    }
   })
 }
 
@@ -329,11 +332,15 @@ async function getDATBalance() {
   await provider.send('eth_requestAccounts', []);
   provider.pollingInterval = 500;
   const signer = provider.getSigner();
+  const address = await signer.getAddress();
   const contract = new ethers.Contract(contractAddress, abi, signer);
-  const balances = await contract.getDATBalance(signer.getAddress());
+  const balances = await contract.getDATBalance(address);
   if (balances != 0) {
     document.getElementById('dat-balances').replaceChildren(balances/(10**18));
     document.getElementById('dat').hidden = false;
+  }
+  else {
+    document.getElementById('dat').hidden = true;
   }
 }
 
