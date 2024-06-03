@@ -3,4 +3,3 @@ artifacts
 build
 node_modules
 cache
-ignition/deployments
