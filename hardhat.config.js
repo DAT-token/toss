@@ -9,6 +9,7 @@ module.exports = {
       url: "https://sepolia-rpc.testnet.debank.com",
       chaindId: "20240324",
       accounts: [vars.get("DBK_PRIV_KEY")],
+      gasPrice: 50000000000,
       ignition: {
 	maxFeePerGasLimit: 50_000_000_000n, // 50 gwei
         maxPriorityFeePerGas: 2_000_000_000n, // 2 gwei
