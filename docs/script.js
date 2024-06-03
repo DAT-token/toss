@@ -1,4 +1,4 @@
-contractAddress = '0xDDC3e711B38476102948E094a9A1e79b4D8eA83e',
+contractAddress = '0x1c3cc056113e46760259F40D4e35b9AfB59C3917',
 abi = [
   {
     anonymous: false,
@@ -234,7 +234,7 @@ abi = [
 ]
 
 async function checkChain () {
-  const targetNetworkId = '0x1ed816'
+  const targetNetworkId = '0x134d7c4'
   const currentChainId = await window.ethereum.request({
 	      method: 'eth_chainId'
 	    })
