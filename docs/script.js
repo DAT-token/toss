@@ -249,7 +249,7 @@ async function checkChain () {
 }
 
 async function changeChain () {
-  const targetNetworkId = '0x1ed816'
+  const targetNetworkId = '0x134d7c4'
   await window.ethereum.request({
 	  method: 'wallet_switchEthereumChain',
 	  params: [{ chainId: targetNetworkId }]
@@ -268,7 +268,7 @@ async function play () {
   const a = document.createElement('a')
   a.title = 'Waiting for tx'
   a.target = 'about:blank'
-  a.href = `https://explorer.testnet.debank.com/tx/${res.hash}`
+  a.href = `https://sepolia-explorer.testnet.debank.com/tx/${res.hash}`
   a.replaceChildren('Waiting for transaction to confirm... ⧉')
   document.getElementById('event').classList = 'alert alert-info alert-dismissible fade show'
   document.getElementById('event').replaceChildren(a)
