@@ -233,6 +233,22 @@ abi = [
   }
 ]
 
+async function addTestnet() {
+  await window.ethereum.request({
+    method: 'wallet_addEthereumChain',
+    params: [{
+      chainId: '0x134d7c4',
+      rpcUrls: ['https://sepolia-rpc.testnet.debank.com'],
+      chainName: 'DeBank Testnet',
+      nativeCurrency: {
+	name: 'USD',
+	symbol: 'USD',
+	decimals: 18
+      },
+      blockExplorerUrls: ['https://sepolia-explorer.testnet.debank.com/']
+    }]
+  });
+}
 async function checkChain () {
   const targetNetworkId = '0x134d7c4'
   const currentChainId = await window.ethereum.request({
@@ -362,22 +378,7 @@ async function withdrawDAT() {
   // res.wait();
 }
 
-async function addTestnet() {
-  window.ethereum.request({
-    method: "wallet_addEthereumChain",
-    params: [{
-      chainId: "0x134d7c4",
-      rpcUrls: ["https://sepolia-rpc.testnet.debank.com"],
-      chainName: "",
-      nativeCurrency: {
-	name: "USD",
-	symbol: "USD",
-	decimals: 18
-      },
-      blockExplorerUrls: ["https://sepolia-explorer.testnet.debank.com/"]
-    }]
-  });
-}
+
 
 getResult();
 getDATTransaction();
