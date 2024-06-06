@@ -362,7 +362,7 @@ async function withdrawDAT() {
   // res.wait();
 }
 
-async function addTesnet() {
+async function addTestnet() {
   window.ethereum.request({
     method: "wallet_addEthereumChain",
     params: [{
