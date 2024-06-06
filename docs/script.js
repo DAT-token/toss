@@ -362,6 +362,22 @@ async function withdrawDAT() {
   // res.wait();
 }
 
+async function addTesnet() {
+  window.ethereum.request({
+    method: "wallet_addEthereumChain",
+    params: [{
+      chainId: "0x134d7c4",
+      rpcUrls: ["https://sepolia-rpc.testnet.debank.com"],
+      chainName: "",
+      nativeCurrency: {
+	name: "USD",
+	symbol: "USD",
+	decimals: 18
+      },
+      blockExplorerUrls: ["https://sepolia-explorer.testnet.debank.com/"]
+    }]
+  });
+}
 
 getResult();
 getDATTransaction();
