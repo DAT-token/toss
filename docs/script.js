@@ -279,12 +279,12 @@ async function play () {
   await provider.send('eth_requestAccounts', [])
   const signer = provider.getSigner()
   const contract = new ethers.Contract(contractAddress, abi, signer)
-  const options = { value: ethers.utils.parseEther('0.001'), gasLimit: 33000 }
+  const options = { value: ethers.utils.parseEther('0.00001'), gasLimit: 33000 }
   const res = await contract.play(options)
   const a = document.createElement('a')
   a.title = 'Waiting for tx'
   a.target = 'about:blank'
-  a.href = `https://sepolia-explorer.testnet.debank.com/tx/${res.hash}`
+  a.href = `https://scan.dbkchain.io/tx/${res.hash}`
   a.replaceChildren('Waiting for transaction to confirm... ⧉')
   document.getElementById('event').classList = 'alert alert-info alert-dismissible fade show'
   document.getElementById('event').replaceChildren(a)
