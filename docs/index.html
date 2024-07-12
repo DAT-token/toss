@@ -34,18 +34,18 @@
 			<img class="rounded-2 mb-4" src="https://raw.githubusercontent.com/DeBankDeFi/logo/master/DeBank/debank-icon.svg"  width="100" height="100">
 			<h1>TOSS</h1>
 			<p class="col-lg-76 mx-auto">
-				Not sure what to do with your DeBank Testnet token? Play DeBank Toss! <br />
-				The rules are simple: bet <b class="play-value"></b> USD, and you have a 50/50 chance to win <b id="win-value"></b> USD. <br />
+				Let's play DeBank Toss! <br />
+				The rules are simple: bet <b class="play-value"></b> ETG, and you have a 50/50 chance to win <b id="win-value"></b> ETH. <br />
 				Plus each game pays <b id="dat-value"></b> $DAT !
 			</p>
 			<p class="mb-5"> 
 				Good luck !
 			</p>
 			<button id="chain" onclick="changeChain()" hidden class="btn btn-lg px-4" type="button">
-			Switch to DeBankTestNet
+			Switch to DBKChain
 			</button>
 			<button id="mint" onclick="play()" hidden class="btn btn-lg px-4" type="button">
-			Toss ! (<b class="play-value"></b> DeBank USD)!
+			Toss ! (<b class="play-value"></b> ETH)!
 			</button>
 			<div id="dat" class="m-3 text-center" hidden>
 				<span class="m-1"><d id="dat-balances"></d> $DAT waiting for you</span>
@@ -53,9 +53,6 @@
 			</div>
 			<div class="col-md-6 offset-md-3 mt-3 text-center">
 				<div id="event" class="alter alter-info alert-dismissible fade show"></div>
-			</div>
-			<div id="dat" class="m-3 text-center">
-				<a onclick="addTestnet()" href="#">Add Debank Testnet to Rabby</a>
 			</div>
 		</div>
 	</div>
