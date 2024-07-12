@@ -1,4 +1,4 @@
-contractAddress = '0x1c3cc056113e46760259F40D4e35b9AfB59C3917',
+contractAddress = '0x1bea424c98333516e333A0fd60FEaa238220a211',
 abi = [
   {
     anonymous: false,
@@ -237,20 +237,20 @@ async function addTestnet() {
   await window.ethereum.request({
     method: 'wallet_addEthereumChain',
     params: [{
-      chainId: '0x134d7c4',
-      rpcUrls: ['https://sepolia-rpc.testnet.debank.com'],
+      chainId: '0x134d8db',
+      rpcUrls: ['https://rpc.mainnet.dbkchain.io'],
       chainName: 'DeBank Testnet',
       nativeCurrency: {
 	name: 'USD',
 	symbol: 'USD',
 	decimals: 18
       },
-      blockExplorerUrls: ['https://sepolia-explorer.testnet.debank.com/']
+      blockExplorerUrls: ['https://rpc.mainnet.dbkchain.io']
     }]
   });
 }
 async function checkChain () {
-  const targetNetworkId = '0x134d7c4'
+  const targetNetworkId = '0x134d8db'
   const currentChainId = await window.ethereum.request({
 	      method: 'eth_chainId'
 	    })
@@ -265,7 +265,7 @@ async function checkChain () {
 }
 
 async function changeChain () {
-  const targetNetworkId = '0x134d7c4'
+  const targetNetworkId = '0x134d8db'
   await window.ethereum.request({
 	  method: 'wallet_switchEthereumChain',
 	  params: [{ chainId: targetNetworkId }]

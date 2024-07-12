@@ -6,8 +6,8 @@ module.exports = {
     hardhat: {
     },
     debank: {
-      url: "https://sepolia-rpc.testnet.debank.com",
-      chaindId: "20240324",
+      url: "https://rpc.mainnet.dbkchain.io",
+      chaindId: "20240603",
       accounts: [vars.get("DBK_PRIV_KEY")],
       gasPrice: 50000000000,
       ignition: {
