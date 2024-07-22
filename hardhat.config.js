@@ -9,10 +9,10 @@ module.exports = {
       url: "https://rpc.mainnet.dbkchain.io",
       chaindId: "20240603",
       accounts: [vars.get("DBK_PRIV_KEY")],
-      gasPrice: 50000000000,
+      gasPrice: 1000000,
       ignition: {
-	maxFeePerGasLimit: 50_000_000_000n, // 50 gwei
-        maxPriorityFeePerGas: 2_000_000_000n, // 2 gwei
+	// maxFeePerGasLimit: 80_000n, // 0.5 gwei
+        maxPriorityFeePerGas: 20_000_000n, // 0.2 gwei
       }
     }
   },
