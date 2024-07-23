@@ -279,7 +279,7 @@ async function play () {
   await provider.send('eth_requestAccounts', [])
   const signer = provider.getSigner()
   const contract = new ethers.Contract(contractAddress, abi, signer)
-  const options = { value: ethers.utils.parseEther('0.00001'), gasLimit: 33000 }
+  const options = { value: ethers.utils.parseEther('0.00003'), gasLimit: 33000 }
   const res = await contract.play(options)
   const a = document.createElement('a')
   a.title = 'Waiting for tx'
